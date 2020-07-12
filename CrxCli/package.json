@@ -1,0 +1,26 @@
+{
+  "name": "crx-cli",
+  "version": "1.0.0",
+  "description": "chrome plugin cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "crx-cli": "bin/crx.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^5.1.0",
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^7.2.0",
+    "ora": "^4.0.4",
+    "rimraf": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}

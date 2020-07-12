@@ -1,0 +1,6 @@
+{
+	"init":{
+		"name":"crx-cli init",
+		"path": "github:MrLiangLong/CrxCli"
+	}
+}
