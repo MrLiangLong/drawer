@@ -1,7 +1,10 @@
 
 const fs = require('fs');
-const babylon = require('babylon');
-const traverse = require('babel-traverse').default;
+//生成AST树
+const babylon = require('babylon'); 
+//通过traverse的ImportDeclaration方法获取依赖属性
+const traverse = require('babel-traverse').default; 
+//将AST重新生成源码
 const { transformFromAst } = require('babel-core');
 
 module.exports = {
