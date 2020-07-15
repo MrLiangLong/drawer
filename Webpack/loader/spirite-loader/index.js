@@ -1,7 +1,10 @@
 const fs = require('fs');
 const path = require('path');
+//将图片转为雪碧图和坐标图
 const Spritesmith = require('spritesmith');
+//webpack工具类，通过一些方法配合loader处理文件
 const { stringifyRequest } = require('loader-utils');
+//将CSS声明值和规则参数转换为节点树，并提供简单的遍历API。
 var valueParser = require('postcss-value-parser');
 
 module.exports = function (source) {
