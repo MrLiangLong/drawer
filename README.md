@@ -2,7 +2,8 @@
 ### 个人知识抽屉
 目前技术栈主要前端，    
 因项目需要也涉及一点Android App原生开发，以及React Native混混APP开发，  
-会些后端Java，能编写基本业务代码，实现数据库的"CRUD"操作。  
+会些后端Java，能实现基本业务代码，实现数据库的"CRUD"操作。 
+PS:因公司的特殊性，前台请求中间层是采用springboot，以及大型应用前台框架是基于springMVC，日常跟Spring打交道。
 
 ### CrxCli(脚手架)/CrxTemplate(模板工程)
 基于Vue的Chrome扩展程序开发脚手架，具备如下能力:   
