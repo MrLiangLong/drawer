@@ -1,6 +1,13 @@
 const cluster = require('cluster');
 
+
+
 if(cluster.isMaster){ //主进程
+
+    cluster.setupMaster({
+        exec:'./worker.js',
+        silent:true
+    })
 
     const cpus = require('os').cpus().length/2;
     
@@ -9,8 +16,8 @@ if(cluster.isMaster){ //主进程
     }
 
     function createWorker(){
-        var woker = cluster.fork();
-
+        var worker = cluster.fork();
+    
         //防止僵尸进程-->心跳
         var missed = 0; //没有回应的ping次数
 
@@ -18,17 +25,18 @@ if(cluster.isMaster){ //主进程
             //3次没有响应，杀死进程
             if(missed===3){
                 clearInterval(timer)
-                process.kill(woker.process.id);
+                console.log(worker.process.pid + ' has become a zombie!');
+                process.kill(worker.process.pid);
                 return;
             }
             //开始心跳
             missed++;
-            woker.send('ping#'+worker.process.id)
+            worker.send('ping#'+worker.process.pid)
         },10000)
 
-        woker.on("message",function(msg){
+        worker.on("message",function(msg){
             //确定心跳回应
-            if(msg==="pong#"+worker.process.id){
+            if(msg==="pong#"+worker.process.pid){
                 missed--;
             }
         });
@@ -41,6 +49,7 @@ if(cluster.isMaster){ //主进程
     }
 
 }else{
+console.log("执行工作进程")
     //进程出现会崩溃的错误
     process.on('uncaughtException',function(err){
         //这里可以做写日志的操作
@@ -59,4 +68,5 @@ if(cluster.isMaster){ //主进程
     if (process.memoryUsage().rss > 734003200) {
         process.exit(1);
     }
+    require('./app.js')
 }
