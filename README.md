@@ -1,10 +1,10 @@
 
-### 个人知识抽屉
-目前技术栈主要前端，    
-因项目需要涉及React Native混混APP开发,以及一点Android App原生开发，  
-会些后端Java，能实现基本业务代码，实现数据库的"CRUD"操作。 
+### 个人技能
+目前技术方向主要前端，VUe方向；   
+因项目需要涉及React Native混合APP开发,以及一点Android App原生开发，  
+会基本后端Java，能实现基本业务代码，具备接口、服务、sql能力。 
  
-PS:因公司前台中间层是采用springboot，以及大型应用前台框架是基于springMVC，日常跟Spring打交道。
+PS:因公司前端框架是基于springMVC/spring Boot和前端框架进行的二次抽象封装，日常跟spring打交道。
 
 ### CrxCli(脚手架)/CrxTemplate(模板工程)
 自定义的一套基于Vue技术栈的Chrome扩展程序开发脚手架，提升开发效率，以及解决应用包生产环境容错问题，具备如下能力:   
